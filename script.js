@@ -34,9 +34,11 @@ rock.addEventListener("click", () => {
   playRound(allChoices[0], getComputerChoice());
   console.log(userScore + " " + computerScore);
   if (userScore >= 5) {
-    scoreCounter.textContent = "Game over! You win!";
+    scoreCounter.textContent =
+      "Game over! You win! Refresh the page to start again";
   } else if (computerScore >= 5) {
-    scoreCounter.textContent = "Game over! You lose!";
+    scoreCounter.textContent =
+      "Game over! You lose! Refresh the page to start again";
   } else {
     scoreCounter.textContent = `Score: ${userScore} - ${computerScore}`;
   }
@@ -47,9 +49,11 @@ paper.addEventListener("click", () => {
   playRound(allChoices[1], getComputerChoice());
   console.log(userScore + " " + computerScore);
   if (userScore >= 5) {
-    scoreCounter.textContent = "Game over! You win!";
+    scoreCounter.textContent =
+      "Game over! You win! Refresh the page to start again";
   } else if (computerScore >= 5) {
-    scoreCounter.textContent = "Game over! You lose!";
+    scoreCounter.textContent =
+      "Game over! You lose! Refresh the page to start again";
   } else {
     scoreCounter.textContent = `Score: ${userScore} - ${computerScore}`;
   }
@@ -60,9 +64,11 @@ scissors.addEventListener("click", () => {
   playRound(allChoices[2], getComputerChoice());
   console.log(userScore + " " + computerScore);
   if (userScore >= 5) {
-    scoreCounter.textContent = "Game over! You win!";
+    scoreCounter.textContent =
+      "Game over! You win! Refresh the page to start again";
   } else if (computerScore >= 5) {
-    scoreCounter.textContent = "Game over! You lose!";
+    scoreCounter.textContent =
+      "Game over! You lose! Refresh the page to start again";
   } else {
     scoreCounter.textContent = `Score: ${userScore} - ${computerScore}`;
   }
