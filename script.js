@@ -8,42 +8,63 @@ function getComputerChoice() {
 }
 
 function playRound(playerSelection, computerSelection) {
-  if (playerSelection == computerSelection) {
-    return "It's a tie!";
-  } else if (playerSelection == "rock" && computerSelection == "paper") {
-    return "You Lose! Paper beats Rock";
+  if (playerSelection == "rock" && computerSelection == "paper") {
+    computerScore++;
   } else if (playerSelection == "rock" && computerSelection == "scissors") {
-    return "You Win! Rock beats Paper";
+    userScore++;
   } else if (playerSelection == "paper" && computerSelection == "rock") {
-    return "You Win! Paper beats Rock";
+    userScore++;
   } else if (playerSelection == "paper" && computerSelection == "scissors") {
-    return "You Lose! Scissors beats Paper";
+    computerScore++;
   } else if (playerSelection == "scissors" && computerSelection == "rock") {
-    return "You Lose! Rock beats Scissors";
+    computerScore++;
   } else if (playerSelection == "scissors" && computerSelection == "paper") {
-    return "You win! Scissors beats Paper!";
-  } else {
-    return "Invalid input. Please input rock, paper, or scissors";
+    userScore++;
   }
 }
 
 const scoreCounter = document.createElement("p");
 const scoreCard = document.getElementById("score");
-scoreCounter.textContent = `Score: ${userScore} - ${computerScore}`;
-scoreCard.appendChild(scoreCounter);
 
 const rock = document.getElementById("Rock");
 const paper = document.getElementById("Paper");
 const scissors = document.getElementById("Scissors");
 
-let score = rock.addEventListener("click", () => {
+rock.addEventListener("click", () => {
   playRound(allChoices[0], getComputerChoice());
+  console.log(userScore + " " + computerScore);
+  if (userScore >= 5) {
+    scoreCounter.textContent = "Game over! You win!";
+  } else if (computerScore >= 5) {
+    scoreCounter.textContent = "Game over! You lose!";
+  } else {
+    scoreCounter.textContent = `Score: ${userScore} - ${computerScore}`;
+  }
+  scoreCard.appendChild(scoreCounter);
 });
 
 paper.addEventListener("click", () => {
   playRound(allChoices[1], getComputerChoice());
+  console.log(userScore + " " + computerScore);
+  if (userScore >= 5) {
+    scoreCounter.textContent = "Game over! You win!";
+  } else if (computerScore >= 5) {
+    scoreCounter.textContent = "Game over! You lose!";
+  } else {
+    scoreCounter.textContent = `Score: ${userScore} - ${computerScore}`;
+  }
+  scoreCard.appendChild(scoreCounter);
 });
 
 scissors.addEventListener("click", () => {
   playRound(allChoices[2], getComputerChoice());
+  console.log(userScore + " " + computerScore);
+  if (userScore >= 5) {
+    scoreCounter.textContent = "Game over! You win!";
+  } else if (computerScore >= 5) {
+    scoreCounter.textContent = "Game over! You lose!";
+  } else {
+    scoreCounter.textContent = `Score: ${userScore} - ${computerScore}`;
+  }
+  scoreCard.appendChild(scoreCounter);
 });
