@@ -27,14 +27,15 @@ function playRound(playerSelection, computerSelection) {
   }
 }
 
-const p = document.createElement("p");
+const scoreCounter = document.createElement("p");
 const scoreCard = document.getElementById("score");
-p.textContent = `Score: ${userScore} - ${computerScore}`;
-scoreCard.appendChild(p);
+scoreCounter.textContent = `Score: ${userScore} - ${computerScore}`;
+scoreCard.appendChild(scoreCounter);
 
 const rock = document.getElementById("Rock");
 const paper = document.getElementById("Paper");
 const scissors = document.getElementById("Scissors");
+
 let score = rock.addEventListener("click", () => {
   playRound(allChoices[0], getComputerChoice());
 });
